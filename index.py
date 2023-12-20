@@ -120,7 +120,7 @@ class housekeeping:
             d=str(self.keeper.get())
             e=str(self.fo_status.get())
                 
-            myconn=mysql.connector.connect(host="localhost",username="root",password="root",database="moon")
+            myconn=mysql.connector.connect(host="localhost",username="root",password="**",database="moon")
             my_cursor=myconn.cursor()
             my_cursor.execute("insert into moon.data(ROOM,ROOM_TYPE,ROOM_STATUS,HK_STATUS,FRONT_OFFICE_STATUS)values(%s,%s,%s,%s,%s)",(a,b,c,d,e))
             myconn.commit()
@@ -132,7 +132,7 @@ class housekeeping:
 
 
     def fetch_data(self):
-        myconn=mysql.connector.connect(host="localhost",username="root",password="root",database="moon")
+        myconn=mysql.connector.connect(host="localhost",username="root",password="**",database="moon")
         my_cursor=myconn.cursor()
         my_cursor.execute("select * from data")
         rows=my_cursor.fetchall()
@@ -161,7 +161,7 @@ class housekeeping:
             c=str(self.status.get())
             d=str(self.keeper.get())
             e=str(self.fo_status.get())
-            myconn=mysql.connector.connect(host="localhost",username="root",password="root",database="moon")
+            myconn=mysql.connector.connect(host="localhost",username="root",password="**",database="moon")
             my_cursor=myconn.cursor()
             my_cursor.execute("update data set ROOM_TYPE=%s,ROOM_STATUS=%s ,Hk_STATUS=%s ,FRONT_OFFICE_STATUS=%s where ROOM=%s",(b,c,d,e,a))
             myconn.commit()
@@ -183,7 +183,7 @@ class housekeeping:
 
     def search(self):
         try:
-            myconn=mysql.connector.connect(host="localhost",username="root",password="root",database="moon")
+            myconn=mysql.connector.connect(host="localhost",username="root",password="**",database="moon")
             my_cursor=myconn.cursor()
             v=str(self.search_var.get())
             t=str(self.search_text.get())
